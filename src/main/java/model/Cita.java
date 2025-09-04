@@ -12,6 +12,7 @@ public class Cita {
     private String estado;
     private double duracion;
     private Mascota mascota;
+    private Veterinario veterinario;
 
 
     public Cita(String codigo, LocalDate fecha, double costo, String hora, String motivo, String observaciones, String estado, double duracion, Mascota mascota) {
@@ -24,6 +25,30 @@ public class Cita {
         this.estado = estado;
         this.duracion = duracion;
         this.mascota = mascota;
+    }
+
+    public boolean fueAtendidoPorJuanCarlos(){
+        boolean resultado = false;
+        if(veterinario.getNombres().equals("Juan Carlos")){
+            resultado = true;
+        }
+        return resultado;
+    }
+    public boolean fueEntreEl12y20() {
+        boolean resultado = false;
+        LocalDate inicio = LocalDate.of(2025, 8, 12);
+        LocalDate fin = LocalDate.of(2025, 8, 20);
+        if(fecha.isAfter(inicio) && fecha.isBefore(fin)) {
+            resultado = true;
+        }
+        return resultado;
+    }
+    public Veterinario getVeterinario() {
+        return veterinario;
+    }
+
+    public void setVeterinario(Veterinario veterinario) {
+        this.veterinario = veterinario;
     }
 
     public Mascota getMascota() {

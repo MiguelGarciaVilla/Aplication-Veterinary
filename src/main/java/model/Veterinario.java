@@ -23,6 +23,9 @@ public class Veterinario {
         this.citas = citas;
     }
 
+
+
+
     public String getNombres() {
         return nombres;
     }

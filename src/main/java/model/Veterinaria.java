@@ -23,6 +23,46 @@ public class Veterinaria {
         this.listaPropietarios = listaPropietarios;
     }
 
+
+    public ArrayList<Veterinario> especialidadMedicinaInterna() {
+        ArrayList<Veterinario> veterinarios = new ArrayList<>();
+        for (Veterinario veterinario : listaVeterinarios) {
+            Especialidad esp = veterinario.getEspecialidad();
+            if (esp != null && esp.getMedicinaInterna() != null && esp.getMedicinaInterna() == 1) {
+                veterinarios.add(veterinario);
+            }
+        }
+        return veterinarios;
+    }
+
+    public ArrayList<Mascota> getMascotasCondicion() {
+        ArrayList<Mascota> resultado = new ArrayList<>();
+        for(Mascota mascota: listaMascotas){
+            if(mascota.MascotaCondicion() != null){
+                resultado.add(mascota);
+            }
+        }
+
+
+        return  resultado;
+    }
+
+
+    public ArrayList<Mascota> getMascotasEntre1y5() {
+        ArrayList<Mascota> mascotasEntre1y5 = new ArrayList<>();
+        for(Mascota mascota: listaMascotas){
+            if(mascota.getEdad()>= 1 && mascota.getEdad()<= 5){
+                mascotasEntre1y5.add(mascota);
+            }
+        }
+        return mascotasEntre1y5;
+    }
+
+
+
+
+
+
     @Override
     public String toString() {
         return "Veterinaria Amigos Peludos\nDireccion: "+ubcacion+"\nNit: "+nit+"\nLista de mascotas: "+listaMascotas;
@@ -142,5 +182,37 @@ public class Veterinaria {
 
     public void setNit(String nit) {
         this.nit = nit;
+    }
+
+    public ArrayList<Mascota> getListaMascotas() {
+        return listaMascotas;
+    }
+
+    public void setListaMascotas(ArrayList<Mascota> listaMascotas) {
+        this.listaMascotas = listaMascotas;
+    }
+
+    public ArrayList<Cita> getListaCitas() {
+        return listaCitas;
+    }
+
+    public void setListaCitas(ArrayList<Cita> listaCitas) {
+        this.listaCitas = listaCitas;
+    }
+
+    public ArrayList<Veterinario> getListaVeterinarios() {
+        return listaVeterinarios;
+    }
+
+    public void setListaVeterinarios(ArrayList<Veterinario> listaVeterinarios) {
+        this.listaVeterinarios = listaVeterinarios;
+    }
+
+    public ArrayList<Propietario> getListaPropietarios() {
+        return listaPropietarios;
+    }
+
+    public void setListaPropietarios(ArrayList<Propietario> listaPropietarios) {
+        this.listaPropietarios = listaPropietarios;
     }
 }

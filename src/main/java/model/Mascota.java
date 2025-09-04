@@ -15,6 +15,34 @@ public class Mascota {
     private ArrayList<Cita> citas;
 
 
+
+    public Mascota MascotaCondicion() {
+        Mascota resultado= null;
+        for(Cita c: citas){
+            if(c.fueEntreEl12y20()&&c.fueAtendidoPorJuanCarlos()){
+                resultado= c.getMascota();
+            }
+        }
+        return resultado;
+    }
+
+
+    public Propietario getPropietario() {
+        return propietario;
+    }
+
+    public void setPropietario(Propietario propietario) {
+        this.propietario = propietario;
+    }
+
+    public ArrayList<Cita> getCitas() {
+        return citas;
+    }
+
+    public void setCitas(ArrayList<Cita> citas) {
+        this.citas = citas;
+    }
+
     public Mascota(String codigo, String nombre, String especie, String raza, int edad, String color, double peso, Propietario propietario, ArrayList<Cita> citas) {
         this.codigo = codigo;
         this.nombre = nombre;
